@@ -15,8 +15,8 @@ public class Deportivo extends Barco{
 		this.potenciaCV = potenciaCV;
 	}
 	
-	public Deportivo (String matricula, double eslora, LocalDate fechaFabricacion, int potenciaCV) {
-		super(matricula, eslora, fechaFabricacion);
+	public Deportivo (String matricula, double eslora, int añoFabricacion, int potenciaCV) {
+		super(matricula, eslora, añoFabricacion);
 		this.potenciaCV= potenciaCV;
 	}
 	

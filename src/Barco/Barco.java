@@ -5,18 +5,18 @@ import java.time.LocalDate;
 public class Barco {
 	private String matricula;
 	private double eslora;
-	private LocalDate fechaFabricacion;
+	private int añoFabricacion;
 	
 	
 	public Barco() {
 		
 	}
 	
-	public Barco(String matricula, double eslora, LocalDate fechaFabricacion) {
+	public Barco(String matricula, double eslora, int añoFabricacion) {
 		super();
 		this.matricula = matricula;
 		this.eslora = eslora;
-		this.fechaFabricacion = fechaFabricacion;
+		this.añoFabricacion = añoFabricacion;
 	}
 	
 	
@@ -32,11 +32,11 @@ public class Barco {
 	protected void setEslora(double eslora) {
 		this.eslora = eslora;
 	}
-	public LocalDate getFechaFabricacion() {
-		return fechaFabricacion;
+	public int getañoFabricacion() {
+		return añoFabricacion;
 	}
-	protected void setFechaFabricacion(LocalDate fechaFabricacion) {
-		this.fechaFabricacion = fechaFabricacion;
+	protected void setFechaFabricacion(int añoFabricacion) {
+		this.añoFabricacion = añoFabricacion;
 	}
 
 	public double precioBarco() {
@@ -71,7 +71,7 @@ public class Barco {
 
 	@Override
 	public String toString() {
-		return "Barco con matricula: " + matricula + ", eslora: " + eslora + ", fechaFabricacion: " + fechaFabricacion;
+		return "Barco con matricula: " + matricula + ", eslora: " + eslora + ", añoFabricacion: " + añoFabricacion;
 	}
 	
 	

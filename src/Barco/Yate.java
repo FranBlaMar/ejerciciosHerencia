@@ -15,8 +15,8 @@ public class Yate extends Deportivo{
 		this.numCamarotes = numCamarotes;
 	}
 	
-	public Yate (String matricula, double eslora, LocalDate fechaFabricacion, int potenciaCV, int numCamarotes) {
-		super(matricula, eslora, fechaFabricacion,potenciaCV);
+	public Yate (String matricula, double eslora, int añoFabricacion, int potenciaCV, int numCamarotes) {
+		super(matricula, eslora, añoFabricacion,potenciaCV);
 		this.numCamarotes= numCamarotes;
 	}
 	
