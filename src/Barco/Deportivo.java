@@ -33,4 +33,9 @@ public class Deportivo extends Barco{
 	public double precioBarco() {
 		return super.getEslora() * 10 + potenciaCV;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+ ", deportivo con CV: " + potenciaCV;
+	}
 }

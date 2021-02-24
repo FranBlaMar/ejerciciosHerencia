@@ -25,4 +25,8 @@ public class Yate extends Deportivo{
 		return super.getEslora() * 10 + super.getPotenciaCV() + numCamarotes;
 	}
 	
+	@Override
+	public String toString() {
+		return super.toString()+ ", numero de camarotes: " + numCamarotes;
+	}
 }

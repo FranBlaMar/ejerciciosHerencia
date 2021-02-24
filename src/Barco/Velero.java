@@ -23,4 +23,11 @@ public class Velero extends Barco{
 	public double precioBarco() {
 		return super.getEslora() * 10 + numeroMastiles;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+ ", Velero con numeroMastiles: " + numeroMastiles;
+	}
+	
+	
 }
