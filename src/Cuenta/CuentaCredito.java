@@ -1,10 +1,6 @@
 package Cuenta;
 
 public class CuentaCredito extends Cuenta {
-
-	
-	
-	
 	
 	private double credito;
 	private static final double CREDITODEFECTO = 100;

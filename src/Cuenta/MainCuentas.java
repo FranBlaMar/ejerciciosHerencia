@@ -1,6 +1,9 @@
 package Cuenta;
 
 import java.util.Scanner;
+import java.text.DateFormat;
+import java.time.LocalDate;
+
 
 public class MainCuentas {
 	
@@ -34,6 +37,11 @@ public class MainCuentas {
 			System.out.println(e.getMessage());
 		}
 		
+		CuentaJoven c3 = new CuentaJoven("200",400.5,"Fran",LocalDate.parse("1998-09-30"));
+		System.out.println(c3.mostrar());
+		c3.ingreso(100);
+		c3.reintegro(200);
+		System.out.println(c3.mostrar());
 
 	}
 

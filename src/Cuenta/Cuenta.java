@@ -8,14 +8,18 @@ public class Cuenta {
 	final static String msg2 = "Saldo insuficiente";
 	
 	
-	public Cuenta( String numCuenta,double saldo) throws Exception {
+	public Cuenta () {
+		
+	}
+	
+	public Cuenta(String numCuenta,double saldo) throws Exception {
 		super();
 		if (saldo <0) { throw new Exception (msg1);}
 		this.saldo = saldo;
 		this.numCuenta = numCuenta;
 	}
 	
-	public Cuenta( String numCuenta) {
+	public Cuenta(String numCuenta) {
 		super();
 		this.saldo = 0;
 		this.numCuenta = numCuenta;
@@ -47,13 +51,12 @@ public class Cuenta {
 			this.saldo-=cant;
 		}else {
 			throw new Exception (msg2);
-		}
-		
+		}	
 	}
 
 	@Override
 	public String toString() {
-		return "Cuenta " + numCuenta + ": saldo " +saldo ;
+		return "Cuenta: " + numCuenta + ", saldo: " + saldo ;
 	}
 
 	@Override
