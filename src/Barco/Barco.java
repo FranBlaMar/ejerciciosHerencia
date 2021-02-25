@@ -1,16 +1,11 @@
 package Barco;
 
-import java.time.LocalDate;
 
-public class Barco {
+public abstract class Barco {
 	private String matricula;
 	private double eslora;
 	private int añoFabricacion;
 	
-	
-	public Barco() {
-		
-	}
 	
 	public Barco(String matricula, double eslora, int añoFabricacion) {
 		super();

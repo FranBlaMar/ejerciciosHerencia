@@ -11,10 +11,7 @@ public class Alquiler {
 	private int posicionAmarre;
 	private Barco barco;
 	final static int PRECIO = 20;
-	
-	
-	public Alquiler() {
-	}
+
 
 	public Alquiler(String nombre, String dni, LocalDate fechaInicio, LocalDate fechaFinal, int posicionAmarre, Barco barco) {
 		super();
@@ -26,61 +23,29 @@ public class Alquiler {
 		this.barco = barco;
 	}
 	
-	public Alquiler(String nombre, String dni, LocalDate fechaInicio, LocalDate fechaFinal, int posicionAmarre) {
-		super();
-		this.nombre = nombre;
-		this.dni = dni;
-		this.fechaInicio = fechaInicio;
-		this.fechaFinal = fechaFinal;
-		this.posicionAmarre = posicionAmarre;
-	}
-
 	public String getNombre() {
 		return nombre;
-	}
-
-	protected void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public String getDni() {
 		return dni;
 	}
 
-	protected void setDni(String dni) {
-		this.dni = dni;
-	}
-
 	public LocalDate getFechaInicio() {
 		return fechaInicio;
-	}
-
-	protected void setFechaInicio(LocalDate fechaInicio) {
-		this.fechaInicio = fechaInicio;
 	}
 
 	public LocalDate getFechaFinal() {
 		return fechaFinal;
 	}
 
-	protected void setFechaFinal(LocalDate fechaFinal) {
-		this.fechaFinal = fechaFinal;
-	}
 
 	public int getPosicionAmarre() {
 		return posicionAmarre;
 	}
 
-	protected void setPosicionAmarre(int posicionAmarre) {
-		this.posicionAmarre = posicionAmarre;
-	}
-
 	public Barco getBarco() {
 		return barco;
-	}
-
-	protected void setBarco(Barco barco) {
-		this.barco = barco;
 	}
 
 	public static int getPrecio() {
@@ -89,7 +54,7 @@ public class Alquiler {
 
 	public double calcularPrecioAlquiler() {
 		long dias = ChronoUnit.DAYS.between(fechaInicio, fechaFinal);
-		return barco.precioBarco() * dias * 20;	
+		return barco.precioBarco() * dias * PRECIO;	
 	}
 
 	@Override

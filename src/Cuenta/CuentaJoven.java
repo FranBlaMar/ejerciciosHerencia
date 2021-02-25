@@ -56,7 +56,7 @@ public class CuentaJoven extends Cuenta{
 
 	public boolean esTitularValido() {
 	long edad = ChronoUnit.YEARS.between(this.fechaNacimiento,LocalDate.now());
-	if (edad > 18 && edad < 25) {
+	if (edad >= 18 && edad <= 25) {
 		return true;
 	}
 	else {
@@ -72,12 +72,7 @@ public class CuentaJoven extends Cuenta{
 	
 	public void reintegro(double cant) throws Exception {
 		if (esTitularValido()) {
-			if (cant <= super.getSaldo() && cant >0) {
-			super.setSaldo(super.getSaldo()-cant);
-			}
-			else {
-				throw new Exception (msg2);
-			}
+			super.reintegro(cant);
 		}
 		else {
 			throw new Exception ("No cumple la edad valida");

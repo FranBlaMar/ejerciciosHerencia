@@ -1,32 +1,23 @@
 package Barco;
 
-import java.time.LocalDate;
-
-public class Yate extends Deportivo{
+public class Yate extends Barco{
 	private int numCamarotes;
-
+	private int potenciaCV;
 	
-	public Yate(int numCamarotes) {
-		super();
-		this.numCamarotes = numCamarotes;
-	}
-	public Yate(int numCamarotes,int potenciaCV) {
-		super(potenciaCV);
-		this.numCamarotes = numCamarotes;
-	}
 	
 	public Yate (String matricula, double eslora, int añoFabricacion, int potenciaCV, int numCamarotes) {
-		super(matricula, eslora, añoFabricacion,potenciaCV);
+		super(matricula, eslora, añoFabricacion);
+		this.potenciaCV= potenciaCV;
 		this.numCamarotes= numCamarotes;
 	}
 	
 	@Override
 	public double precioBarco() {
-		return super.getEslora() * 10 + super.getPotenciaCV() + numCamarotes;
+		return super.precioBarco() + numCamarotes + potenciaCV;
 	}
 	
 	@Override
 	public String toString() {
-		return super.toString()+ ", numero de camarotes: " + numCamarotes;
+		return super.toString()+ ", numero de camarotes: " + numCamarotes + ", potencia en CV: "+ potenciaCV;
 	}
 }
