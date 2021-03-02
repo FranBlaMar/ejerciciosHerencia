@@ -5,6 +5,7 @@ public abstract class Barco {
 	private String matricula;
 	private double eslora;
 	private int añoFabricacion;
+	private int PRECIO = 10;
 	
 	
 	public Barco(String matricula, double eslora, int añoFabricacion) {
@@ -35,7 +36,7 @@ public abstract class Barco {
 	}
 
 	public double precioBarco() {
-		return this.eslora * 10;
+		return this.eslora * PRECIO;
 	}
 	
 	
