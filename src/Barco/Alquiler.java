@@ -13,8 +13,11 @@ public class Alquiler {
 	final static int PRECIO = 20;
 
 
-	public Alquiler(String nombre, String dni, LocalDate fechaInicio, LocalDate fechaFinal, int posicionAmarre, Barco barco) {
+	public Alquiler(String nombre, String dni, LocalDate fechaInicio, LocalDate fechaFinal, int posicionAmarre, Barco barco) throws AlquilerException{
 		super();
+		if (fechaFinal.isBefore(fechaInicio) || fechaFinal == null) {
+			throw new AlquilerException ("Fecha final invalidad");
+		}
 		this.nombre = nombre;
 		this.dni = dni;
 		this.fechaInicio = fechaInicio;
@@ -22,6 +25,16 @@ public class Alquiler {
 		this.posicionAmarre = posicionAmarre;
 		this.barco = barco;
 	}
+	
+	public Alquiler(String nombre, String dni, LocalDate fechaInicio, int posicionAmarre, Barco barco) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.fechaInicio = fechaInicio;
+		this.posicionAmarre = posicionAmarre;
+		this.barco = barco;
+	}
+	
 	
 	public String getNombre() {
 		return nombre;
@@ -52,7 +65,7 @@ public class Alquiler {
 		return PRECIO;
 	}
 
-	public double calcularPrecioAlquiler() {
+	public double calcularPrecioAlquiler() throws Exception{
 		long dias = ChronoUnit.DAYS.between(fechaInicio, fechaFinal);
 		return barco.precioBarco() * dias * PRECIO;	
 	}
