@@ -3,16 +3,19 @@ package Vehiculos;
 public abstract class Vehiculo {
 	private String matricula;
 	private String gama;
-	private String combustible;
-	private int dias;
+	private static final int PRECIOGAMAALTA = 50;
+	private static final int PRECIOGAMAMEDIA = 40;
+	private static final int PRECIOGAMABAJA = 30;
+	
 	
 	//constructor
-	public Vehiculo(String matricula, String gama, String combustible, int dias) {
+	public Vehiculo(String matricula, String gama) throws VehiculoException{
 		super();
+		if (!gama.toUpperCase().equals("ALTA") && !gama.toUpperCase().equals("BAJA") && !gama.toUpperCase().equals("MEDIA")){
+			throw new VehiculoException ("Gama incorrecta. Gamas permitidas: (alta,media,baja)");
+		}
 		this.matricula = matricula;
 		this.gama = gama;
-		this.combustible = combustible;
-		this.dias = dias;
 	}
 
 	
@@ -21,18 +24,36 @@ public abstract class Vehiculo {
 		return matricula;
 	}
 
-	
 	protected String getGama() {
 		return gama;
 	}
 
-
-
-	protected String getCombustible() {
-		return combustible;
+	protected static int getPreciogamaalta() {
+		return PRECIOGAMAALTA;
 	}
 
+	protected static int getPreciogamamedia() {
+		return PRECIOGAMAMEDIA;
+	}
 
+	protected static int getPreciogamabaja() {
+		return PRECIOGAMABAJA;
+	}
+	
+	//calcular precio
+	public double calcularPrecio() {
+		if (gama.toUpperCase().equals("BAJA")) {
+			return PRECIOGAMABAJA;
+		}
+		else if (gama.toUpperCase().equals("MEDIA")) {
+			return PRECIOGAMAMEDIA;
+		}
+		else {
+			return PRECIOGAMAALTA;
+		}
+	}
+	
+	
 	//hashcode, equal y toString
 	@Override
 	public int hashCode() {
@@ -63,7 +84,7 @@ public abstract class Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Vehiculo con matricula: " + matricula + ", gama: " + gama + ", combustible: " + combustible;
+		return "Vehiculo con matricula: " + matricula + ", gama: " + gama;
 	}
 	
 	
