@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class calculadorPrecio {
 	static Scanner teclado = new Scanner (System.in);
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 	int opcion;
 	Vehiculo [] ArrayVehiculos = new Vehiculo [200];
 	int contador = 0; 
@@ -17,7 +17,7 @@ public class calculadorPrecio {
 				String tipoVehiculo = leerString ("¿Qué tipo de vehiculo desea dar de alta? (Coche,Microbus,furgoneta)").toUpperCase();
 				switch (tipoVehiculo) {
 				case "COCHE":
-					String combustible = leerString ("¿Qué tipo de combutible usa su coche? (gasolina o diesel)");
+					String combustible = leerString ("¿Qué tipo de combustible usa su coche? (gasolina o diesel)");
 					try {
 					ArrayVehiculos [contador] = new Coche (matricula, gama, combustible);
 					contador ++;
@@ -52,6 +52,9 @@ public class calculadorPrecio {
 				break;
 				
 			case 2:
+				if (contador == 0) {
+					throw new Exception ("No hay ningun coche dado de alta");
+				}
 				matricula = leerString("Introduzca la matrícula del vehiculo");
 				int dias = leerInt ("¿De cuántos días será el alquiler?");
 				for (int i = 0; i < contador; i ++) {
@@ -59,6 +62,9 @@ public class calculadorPrecio {
 						System.out.println("El precio del alquiler es: " + ArrayVehiculos[i].calcularPrecio() * dias);
 					}
 				}
+				break;
+				
+			case 3:
 				break;
 				
 			default:
