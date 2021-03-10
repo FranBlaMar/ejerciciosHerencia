@@ -1,4 +1,4 @@
-package Magos;
+package MagosBoletin;
 
 public class mainRol {
 
