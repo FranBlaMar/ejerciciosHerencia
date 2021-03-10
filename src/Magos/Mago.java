@@ -1,4 +1,4 @@
-package JuegoRol;
+package Magos;
 
 public class Mago extends Personaje{
 	private String ArrayHechizos [] = new String [4];

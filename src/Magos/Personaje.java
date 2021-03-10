@@ -1,4 +1,6 @@
-package JuegoRol;
+package Magos;
+
+import java.util.Random;
 
 public abstract class Personaje {
 	private String nombre;
@@ -107,7 +109,6 @@ public abstract class Personaje {
 			return false;
 		return true;
 	}
-
 
 	@Override
 	public String toString() {

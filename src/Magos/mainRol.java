@@ -1,4 +1,4 @@
-package JuegoRol;
+package Magos;
 
 public class mainRol {
 
