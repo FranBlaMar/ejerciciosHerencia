@@ -1,6 +1,6 @@
 package elementos;
 
-import java.util.Scanner;
+import logicaJuego.Constantes; 
 
 public class Jugador extends Elemento{
 	private int fuerza;
@@ -12,12 +12,14 @@ public class Jugador extends Elemento{
 	private int	pociones;
 	private int	gemas;
 	
+	
 	//builder
 	public Jugador(char simbolo, int fil, int col) {
 		super(simbolo);
 		this.fil = fil;
 		this.col = col;
 	}
+	
 	
 	//geters & seters
 	protected int getFuerza() {
@@ -84,8 +86,10 @@ public class Jugador extends Elemento{
 		this.gemas = gemas;
 	}
 	
-	//Metodos
 	
+	
+	
+	//Metodos
 	public int nextCol (char direccion) {
 		switch (direccion) {
 		case 'N':
