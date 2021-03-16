@@ -22,7 +22,7 @@ public class Jugador extends Elemento{
 	
 	
 	//geters & seters
-	protected int getFuerza() {
+	public int getFuerza() {
 		return fuerza;
 	}
 
@@ -30,7 +30,7 @@ public class Jugador extends Elemento{
 		this.fuerza = fuerza;
 	}
 
-	protected int getMagia() {
+	public int getMagia() {
 		return magia;
 	}
 
@@ -38,7 +38,7 @@ public class Jugador extends Elemento{
 		this.magia = magia;
 	}
 
-	protected int getVelocidad() {
+	public int getVelocidad() {
 		return velocidad;
 	}
 
@@ -46,43 +46,43 @@ public class Jugador extends Elemento{
 		this.velocidad = velocidad;
 	}
 
-	protected int getFil() {
+	public int getFil() {
 		return fil;
 	}
 
-	protected void setFil(int fil) {
+	public void setFil(int fil) {
 		this.fil = fil;
 	}
 
-	protected int getCol() {
+	public int getCol() {
 		return col;
 	}
 
-	protected void setCol(int col) {
+	public void setCol(int col) {
 		this.col = col;
 	}
 
-	protected int getDinero() {
+	public int getDinero() {
 		return dinero;
 	}
 
-	protected void setDinero(int dinero) {
+	public void setDinero(int dinero) {
 		this.dinero = dinero;
 	}
 
-	protected int getPociones() {
+	public int getPociones() {
 		return pociones;
 	}
 
-	protected void setPociones(int pociones) {
+	public void setPociones(int pociones) {
 		this.pociones = pociones;
 	}
 
-	protected int getGemas() {
+	public int getGemas() {
 		return gemas;
 	}
 
-	protected void setGemas(int gemas) {
+	public void setGemas(int gemas) {
 		this.gemas = gemas;
 	}
 	
